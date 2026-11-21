@@ -11,7 +11,7 @@ class CerebroBot(commands.Bot):
 
     async def setup_hook(self):
         # Carga automática de los módulos en la carpeta cogs
-        await self.load_extension("cogs.ai_chat")
+        await self.load_extension("cogs.chat")
 
     async def on_ready(self):
         print(f"🧠 {self.user} está en línea | Modelo: {OLLAMA_MODEL}")
