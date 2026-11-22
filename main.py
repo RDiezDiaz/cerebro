@@ -10,8 +10,8 @@ class CerebroBot(commands.Bot):
         super().__init__(command_prefix="!", intents=intents)
 
     async def setup_hook(self):
-        # Carga automática de los módulos en la carpeta cogs
         await self.load_extension("cogs.chat")
+        await self.tree.sync()
 
     async def on_ready(self):
         print(f"🧠 {self.user} está en línea | Modelo: {OLLAMA_MODEL}")
